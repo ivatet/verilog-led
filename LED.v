@@ -24,7 +24,7 @@ module LED(
 	clk_divider clk_divider_0(
 		.clk     (CLOCK_50_B5B),   /* input */
 		.rst_n   (CPU_RESET_n),    /* input */
-		.clk_div (24'd10_000_000), /* input */
+		.clk_div (24'd5_000_000), /* input */
 		.clk_o   (clk_5_hz)        /* output */
 	);
 
@@ -32,7 +32,8 @@ module LED(
 		.clk     (clk_5_hz),       /* input */
 		.rst_n   (CPU_RESET_n),    /* input */
 		.key_n   (KEY),            /* input */
-		.led_g   (LEDG)            /* output */
+		.led_g   (LEDG),           /* output */
+		.led_r   (LEDR)            /* output */
 	);
 
 endmodule
