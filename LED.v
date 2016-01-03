@@ -31,6 +31,7 @@ module LED(
 	led_btn_ctrl led_btn_ctrl_0(
 		.clk     (clk_5_hz),       /* input */
 		.rst_n   (CPU_RESET_n),    /* input */
+		.key_n   (KEY),            /* input */
 		.led_g   (LEDG)            /* output */
 	);
 
