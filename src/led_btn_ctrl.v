@@ -18,6 +18,7 @@ module led_btn_ctrl(
 	assign led_g = led_g_reg;
 	assign led_r = led_r_reg;
 
+	/* handle the keypress event of a 4 buttons */
 	genvar i;
 	generate
 		for (i = 0; i < 4; i = i + 1)
@@ -32,6 +33,7 @@ module led_btn_ctrl(
 		end
 	endgenerate
 
+	/* drives the 2 green LEDs associated with each button */
 	integer j;
 	always @ (posedge clk or negedge rst_n)
 	begin
@@ -43,6 +45,7 @@ module led_btn_ctrl(
 			begin
 				if (key_n_reg[j] == 1)
 				begin
+					/* toggle each LED */
 					led_g_reg[j * 2] <= !led_g_reg[j * 2];
 					led_g_reg[j * 2 + 1] <= led_g_reg[j * 2];
 				end
@@ -55,6 +58,7 @@ module led_btn_ctrl(
 		end
 	end
 
+	/* drives the 10 red LEDs */
 	always @ (posedge clk or negedge rst_n)
 	begin
 		if (!rst_n)
