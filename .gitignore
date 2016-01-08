@@ -1,0 +1,12 @@
+*.rpt
+*.summary
+*.bak
+*.smsg
+*.done
+*.sof
+*.txt
+*.pin
+*.jdi
+db/
+hc_output/
+incremental_db/
